@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCAA Transfer Guides - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .division-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .division-section:last-child {
+            border-bottom: none;
+        }
+
+        .division-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .division-header h3 {
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .division-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .info-box {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--background);
+            font-weight: 600;
+        }
+
+        .sport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sport-item {
+            background-color: var(--background);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .sport-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .sport-item h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .summary-table {
+            margin-top: 2rem;
+        }
+
+        .special-circumstances {
+            margin-top: 2rem;
+        }
+
+        .year-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .year-tab {
+            padding: 0.5rem 1rem;
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .year-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .year-content {
+            display: none;
+        }
+
+        .year-content.active {
+            display: block;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <h1>NCAA Transfer Guides</h1>
+            <p>Comprehensive information on transfer deadlines, requirements, and opportunities across NCAA Divisions I, II, and III for 2025-2027.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🧭</span> Complete NCAA Transfer Guide</h2>
+            <p>This guide provides detailed information about transfer rules, timelines, and procedures across all NCAA divisions for academic years 2025-2027.</p>
+            
+            <div class="year-tabs">
+                <div class="year-tab active">2025</div>
+                <div class="year-tab">2026</div>
+                <div class="year-tab">2027</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🏅</span> Division I: Structured Portal Windows</h2>
+            
+            <div class="info-box">
+                <h4>Portal Access</h4>
+                <p><strong>Yes</strong> - NCAA Transfer Portal</p>
+                <p><strong>Process:</strong> Athletes must enter the portal <em>during designated windows</em> based on sport and season.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Portal Access Rules</h4>
+                <ul>
+                    <li>Athletes must request entry via written notification to their school.</li>
+                    <li>Schools have <strong>2 business days</strong> to submit athlete info to the portal.</li>
+                    <li>Athletes can <strong>commit any time</strong>, but must <strong>enter during the window</strong>.</li>
+                </ul>
+            </div>
+
+            <h3>Division I Transfer Portal Windows by Sport</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sport Season</th>
+                            <th>2025 Dates</th>
+                            <th>2026 Dates</th>
+                            <th>2027 Dates</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FBS/FCS Football</strong> (Winter)</td>
+                            <td>Dec 9–28, 2024</td>
+                            <td>Dec 8–27, 2025</td>
+                            <td>Dec 7–26, 2026</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FBS/FCS Football</strong> (Spring)</td>
+                            <td>Apr 16–25, 2025</td>
+                            <td>Apr 15–24, 2026</td>
+                            <td>Apr 14–23, 2027</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Men's Basketball</strong></td>
+                            <td>Mar 24–Apr 22, 2025</td>
+                            <td>Mar 23–Apr 21, 2026</td>
+                            <td>Mar 22–Apr 20, 2027</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Women's Basketball</strong></td>
+                            <td>Mar 25–Apr 23, 2025</td>
+                            <td>Mar 24–Apr 22, 2026</td>
+                            <td>Mar 23–Apr 21, 2027</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fall Sports</strong> (Soccer, Volleyball, etc.)</td>
+                            <td>30 days after championship selections (Nov/Dec)</td>
+                            <td>Same</td>
+                            <td>Same</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Winter Sports</strong> (Wrestling, Hockey, etc.)</td>
+                            <td>30 days after championship selections (Mar)</td>
+                            <td>Same</td>
+                            <td>Same</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Spring Sports</strong> (Baseball, Softball, etc.)</td>
+                            <td>Dec 1–15, 2024 & 45 days after championship selections</td>
+                            <td>Same</td>
+                            <td>Same</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">⚖️</span> Division II: Notification-Based Process</h2>
+            
+            <div class="info-box">
+                <h4>Portal Access</h4>
+                <p><strong>Yes</strong></p>
+                <p><strong>Process:</strong> No sport-specific windows; governed by a <strong>single notification deadline</strong></p>
+            </div>
+
+            <div class="info-box">
+                <h4>Key Rules</h4>
+                <ul>
+                    <li>Must submit <strong>written notification of transfer by June 15</strong> of each academic year.</li>
+                    <li>Once notification is submitted:
+                        <ul>
+                            <li>The school has <strong>7 days</strong> to enter the athlete into the portal.</li>
+                            <li>Athletes must complete an <strong>educational module</strong> before entry.</li>
+                        </ul>
+                    </li>
+                    <li>Athletes may <strong>practice and compete</strong> at the new school the next year, assuming all eligibility standards are met.</li>
+                </ul>
+            </div>
+
+            <h3>Timeline Highlights (Same Each Year)</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Written Transfer Notification</td>
+                            <td>June 15</td>
+                        </tr>
+                        <tr>
+                            <td>School Portal Entry</td>
+                            <td>Within 7 days of notification</td>
+                        </tr>
+                        <tr>
+                            <td>Eligibility for Competition</td>
+                            <td>Must meet academic and compliance rules at new institution</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🎓</span> Division III: No NCAA Portal – Use Self-Release</h2>
+            
+            <div class="info-box">
+                <h4>Portal Access</h4>
+                <p><strong>❌ No Transfer Portal</strong></p>
+                <p><strong>Process:</strong> Uses <strong>NCAA Self-Release Form</strong> and institutional communication</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Key Features</h4>
+                <ul>
+                    <li>No set transfer windows</li>
+                    <li>Athletes can initiate contact with other Division III schools by submitting a <strong>Self-Release Form</strong>—valid for <strong>30 days</strong>.</li>
+                    <li>Does <strong>not require permission</strong> from the current school to talk to another.</li>
+                    <li>Each school and conference may have internal transfer rules that affect eligibility.</li>
+                </ul>
+            </div>
+
+            <h3>Transfer Mechanics</h3>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Self-Release Submission</td>
+                            <td>Required before contacting other DIII institutions</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Period</td>
+                            <td>30 days from form initiation</td>
+                        </tr>
+                        <tr>
+                            <td>Institutional Eligibility</td>
+                            <td>Must meet the new school's academic and athletic standards</td>
+                        </tr>
+                        <tr>
+                            <td>Immediate Play</td>
+                            <td>Often allowed, depending on prior participation and conference policies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">⚠️</span> Special Circumstances (All Divisions)</h2>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situation</th>
+                            <th>Transfer Flexibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Head coach departure</td>
+                            <td>30-day window to enter portal (DI only)</td>
+                        </tr>
+                        <tr>
+                            <td>Sport discontinued</td>
+                            <td>Athlete may transfer at any time</td>
+                        </tr>
+                        <tr>
+                            <td>Graduate transfers (DI)</td>
+                            <td>Must follow standard sport-specific windows</td>
+                        </tr>
+                        <tr>
+                            <td>Walk-ons</td>
+                            <td>Portal entry not required, but must notify current school if on roster</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">✅</span> Summary: Key Differences by Division</h2>
+            
+            <div class="table-container summary-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Division I</th>
+                            <th>Division II</th>
+                            <th>Division III</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Portal Access</strong></td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transfer Window</strong></td>
+                            <td>Specific windows by sport</td>
+                            <td>Notification deadline (June 15)</td>
+                            <td>No window</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact Rules</strong></td>
+                            <td>Must enter portal to be contacted</td>
+                            <td>Written notification first</td>
+                            <td>Self-release form (no permission needed)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Educational Module Required</strong></td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                            <td>❌ No</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Can Commit Anytime?</strong></td>
+                            <td>✅ Yes (if in portal)</td>
+                            <td>✅ Yes</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Immediate Eligibility?</strong></td>
+                            <td>Depends on compliance</td>
+                            <td>Must meet academic eligibility</td>
+                            <td>Depends on conference/school</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center;">
+            <h2>Stay Updated</h2>
+            <p>Join our waitlist to receive notifications about any changes to NCAA transfer rules and deadlines, and get early access to our other upcoming services.</p>
+            <a href="index.html#waitlist" class="cta-button" style="margin-top: 1.5rem;">Join Waitlist</a>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.year-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Here you would typically show/hide content based on the selected year
+                    // For now, we're just changing the active tab
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

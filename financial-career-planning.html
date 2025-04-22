@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial & Career Planning - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .outline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .outline-item h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .outline-item p {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-list {
+            list-style: none;
+            padding: 0;
+            margin-left: 1.5rem;
+        }
+
+        .outline-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outline-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .takeaway-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .planning-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-content h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .planner-profile {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .planner-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .planner-info {
+            flex-grow: 1;
+        }
+
+        .planner-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .planner-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .planner-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .specialty-tag {
+            background-color: var(--card-background);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .service-example {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-example h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-example p {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .detail {
+            background-color: var(--card-background);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .detail strong {
+            color: var(--primary-color);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <h1>Financial & Career Planning</h1>
+            <p>Expert guidance on managing finances as a student athlete and planning for your professional career path after graduation.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">💰</span> About Financial & Career Planning</h2>
+            <p>Our Financial & Career Planning service helps student-athletes navigate the unique financial challenges they face and develop a strategic approach to their professional future. We combine financial expertise with career development strategies to ensure you're prepared for success both during and after your athletic career.</p>
+            
+            <div class="outline-item">
+                <h3>What We Offer</h3>
+                <ul class="outline-list">
+                    <li>Personalized financial planning tailored to student-athlete needs</li>
+                    <li>NIL income management and investment strategies</li>
+                    <li>Career development planning and skill assessment</li>
+                    <li>Industry connections and networking opportunities</li>
+                    <li>Transition planning from athletics to professional career</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👥</span> Who Is This For?</h2>
+            
+            <div class="takeaway-card">
+                <h3>Current Student-Athletes</h3>
+                <p>Looking to manage NIL earnings, scholarships, and prepare for financial independence while balancing athletic and academic commitments.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Graduating Athletes</h3>
+                <p>Planning for the transition from collegiate athletics to professional life, whether in sports or another industry.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Professional Athletes</h3>
+                <p>Seeking guidance on managing income, investments, and planning for life after their athletic career.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Parents & Guardians</h3>
+                <p>Supporting their student-athletes through financial decisions and career planning processes.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📋</span> Our Planning Process</h2>
+            
+            <div class="planning-step">
+                <div class="step-icon">1</div>
+                <div class="step-content">
+                    <h3>Financial Assessment</h3>
+                    <p>We begin with a comprehensive evaluation of your current financial situation and future goals.</p>
+                    <ul class="outline-list">
+                        <li>Income sources (NIL, scholarships, part-time work)</li>
+                        <li>Current expenses and budgeting needs</li>
+                        <li>Financial goals and priorities</li>
+                        <li>Risk tolerance and investment preferences</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="planning-step">
+                <div class="step-icon">2</div>
+                <div class="step-content">
+                    <h3>Financial Strategy Development</h3>
+                    <p>We create a personalized financial plan that addresses your unique needs as a student-athlete.</p>
+                    <ul class="outline-list">
+                        <li>Budgeting strategies for athletic lifestyle</li>
+                        <li>Tax planning for NIL income</li>
+                        <li>Savings and investment recommendations</li>
+                        <li>Debt management and credit building</li>
+                        <li>Insurance and risk protection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="planning-step">
+                <div class="step-icon">3</div>
+                <div class="step-content">
+                    <h3>Career Assessment</h3>
+                    <p>We evaluate your skills, interests, and career aspirations to identify potential pathways.</p>
+                    <ul class="outline-list">
+                        <li>Skills inventory and strengths assessment</li>
+                        <li>Career interest exploration</li>
+                        <li>Industry research and opportunity identification</li>
+                        <li>Educational and certification planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="planning-step">
+                <div class="step-icon">4</div>
+                <div class="step-content">
+                    <h3>Career Strategy Development</h3>
+                    <p>We help you create a strategic plan for your professional development and career transition.</p>
+                    <ul class="outline-list">
+                        <li>Career goal setting and timeline development</li>
+                        <li>Resume and LinkedIn profile optimization</li>
+                        <li>Networking strategy and relationship building</li>
+                        <li>Interview preparation and job search tactics</li>
+                        <li>Professional branding and personal marketing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="planning-step">
+                <div class="step-icon">5</div>
+                <div class="step-content">
+                    <h3>Implementation & Ongoing Support</h3>
+                    <p>We provide guidance on implementing your plans and offer continued support as your situation evolves.</p>
+                    <ul class="outline-list">
+                        <li>Action plan development with specific next steps</li>
+                        <li>Regular check-ins and plan adjustments</li>
+                        <li>Resource recommendations and referrals</li>
+                        <li>Crisis management for unexpected financial or career challenges</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">💼</span> Service Examples</h2>
+            <p>Here are examples of the financial and career planning services we offer:</p>
+            
+            <div class="service-example">
+                <h3>NIL Financial Management</h3>
+                <p>Comprehensive guidance for student-athletes earning income through Name, Image, and Likeness opportunities.</p>
+                <div class="service-details">
+                    <div class="detail"><strong>Income Tracking:</strong> Systems for monitoring and organizing NIL earnings</div>
+                    <div class="detail"><strong>Tax Planning:</strong> Understanding tax obligations and maximizing deductions</div>
+                    <div class="detail"><strong>Investment Strategy:</strong> Long-term wealth building through appropriate investments</div>
+                    <div class="detail"><strong>Budgeting:</strong> Creating spending plans that align with athletic and academic priorities</div>
+                </div>
+            </div>
+
+            <div class="service-example">
+                <h3>Career Transition Planning</h3>
+                <p>Strategic guidance for athletes transitioning from collegiate sports to professional careers.</p>
+                <div class="service-details">
+                    <div class="detail"><strong>Skills Translation:</strong> Framing athletic experience for non-sports employers</div>
+                    <div class="detail"><strong>Industry Exploration:</strong> Identifying career paths that leverage your strengths</div>
+                    <div class="detail"><strong>Networking Strategy:</strong> Building professional relationships in your target industry</div>
+                    <div class="detail"><strong>Job Search Tactics:</strong> Effective approaches for finding opportunities</div>
+                </div>
+            </div>
+
+            <div class="service-example">
+                <h3>Professional Athlete Financial Planning</h3>
+                <p>Comprehensive financial guidance for athletes with professional contracts or significant earning potential.</p>
+                <div class="service-details">
+                    <div class="detail"><strong>Contract Analysis:</strong> Understanding terms and maximizing value</div>
+                    <div class="detail"><strong>Wealth Preservation:</strong> Strategies to protect and grow earnings</div>
+                    <div class="detail"><strong>Retirement Planning:</strong> Long-term financial security beyond athletic career</div>
+                    <div class="detail"><strong>Legacy Planning:</strong> Estate planning and charitable giving strategies</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👨‍💼</span> Our Financial & Career Planners</h2>
+            <p>Our service is led by experienced professionals with backgrounds in financial planning, career development, and athletics.</p>
+            
+            <div class="planner-profile">
+                <div class="planner-avatar">RW</div>
+                <div class="planner-info">
+                    <h3>Robert Williams</h3>
+                    <p>Certified Financial Planner with 15+ years of experience specializing in athlete finances</p>
+                    <p>Former collegiate athlete and financial advisor to professional sports teams</p>
+                    <div class="planner-specialties">
+                        <span class="specialty-tag">Financial Planning</span>
+                        <span class="specialty-tag">Investment Strategy</span>
+                        <span class="specialty-tag">Tax Planning</span>
+                        <span class="specialty-tag">Athlete Finances</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="planner-profile">
+                <div class="planner-avatar">JL</div>
+                <div class="planner-info">
+                    <h3>Jennifer Lopez</h3>
+                    <p>Career Development Specialist with expertise in athlete transitions</p>
+                    <p>10+ years of experience in corporate recruiting and career coaching</p>
+                    <div class="planner-specialties">
+                        <span class="specialty-tag">Career Transition</span>
+                        <span class="specialty-tag">Resume Writing</span>
+                        <span class="specialty-tag">Interview Preparation</span>
+                        <span class="specialty-tag">Professional Branding</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="planner-profile">
+                <div class="planner-avatar">MT</div>
+                <div class="planner-info">
+                    <h3>Marcus Thompson</h3>
+                    <p>Former NFL player turned financial educator and career advisor</p>
+                    <p>Specializes in helping athletes avoid common financial pitfalls</p>
+                    <div class="planner-specialties">
+                        <span class="specialty-tag">Athlete Mentorship</span>
+                        <span class="specialty-tag">Financial Education</span>
+                        <span class="specialty-tag">Business Development</span>
+                        <span class="specialty-tag">Public Speaking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">✅</span> Benefits of Financial & Career Planning</h2>
+            
+            <div class="two-column">
+                <div class="takeaway-card">
+                    <h3>Financial Security</h3>
+                    <p>Develop sound financial habits and strategies that protect your earnings and build long-term wealth.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Informed Decision-Making</h3>
+                    <p>Make confident financial and career choices based on expert guidance and comprehensive information.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Career Clarity</h3>
+                    <p>Gain clarity on your professional direction and develop a strategic approach to achieving your career goals.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Reduced Stress</h3>
+                    <p>Navigate financial and career challenges with confidence, reducing anxiety about your future.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Maximized Opportunities</h3>
+                    <p>Identify and capitalize on financial and career opportunities that align with your goals.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Smooth Transitions</h3>
+                    <p>Successfully navigate the transition from athletics to your next professional chapter.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center;">
+            <h2>Apply Now</h2>
+            <p>Ready to take control of your financial future? Apply now to work with our expert financial and career advisors and start building your path to success.</p>
+            <a href="#" class="cta-button" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background-color: var(--primary-color); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Apply Now</a>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

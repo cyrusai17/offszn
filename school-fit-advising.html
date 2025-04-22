@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Fit Advising - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .outline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .outline-item h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .outline-item p {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-list {
+            list-style: none;
+            padding: 0;
+            margin-left: 1.5rem;
+        }
+
+        .outline-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outline-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .takeaway-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-content h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .advisor-profile {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .advisor-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .advisor-info {
+            flex-grow: 1;
+        }
+
+        .advisor-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .specialty-tag {
+            background-color: var(--card-background);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .school-example {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .school-example h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .school-example p {
+            margin-bottom: 0.5rem;
+        }
+
+        .school-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .metric {
+            background-color: var(--card-background);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .metric strong {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <h1>School Fit Advising</h1>
+            <p>Get personalized recommendations on schools that match your athletic abilities, academic goals, and personal preferences.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🎓</span> About School Fit Advising</h2>
+            <p>Our School Fit Advising service helps student-athletes find the perfect college or university that aligns with their athletic potential, academic interests, and personal preferences. We use a data-driven approach combined with expert insights to provide personalized school recommendations.</p>
+            
+            <div class="outline-item">
+                <h3>What We Offer</h3>
+                <ul class="outline-list">
+                    <li>Personalized school recommendations based on your unique profile</li>
+                    <li>Comprehensive evaluation of athletic programs and competition levels</li>
+                    <li>Academic fit assessment for your intended major and career goals</li>
+                    <li>Cultural and social environment matching</li>
+                    <li>Recruitment strategy guidance and timeline planning</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👥</span> Who Is This For?</h2>
+            
+            <div class="takeaway-card">
+                <h3>High School Athletes</h3>
+                <p>Students in grades 9-12 who are exploring college options and want to find schools where they can excel both athletically and academically.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Transfer Students</h3>
+                <p>Current college athletes looking to transfer to a better-fit institution for their athletic and academic development.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>International Athletes</h3>
+                <p>Student-athletes from outside the U.S. navigating the American college sports system and academic requirements.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Parents & Guardians</h3>
+                <p>Supporting their student-athletes through the college selection process with expert guidance and insights.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📋</span> Our Advising Process</h2>
+            
+            <div class="process-step">
+                <div class="step-icon">1</div>
+                <div class="step-content">
+                    <h3>Initial Assessment</h3>
+                    <p>We begin with a comprehensive evaluation of your athletic profile, academic interests, and personal preferences.</p>
+                    <ul class="outline-list">
+                        <li>Athletic performance metrics and potential</li>
+                        <li>Academic record and intended major</li>
+                        <li>Geographic preferences and campus culture</li>
+                        <li>Financial considerations and scholarship opportunities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">2</div>
+                <div class="step-content">
+                    <h3>School Research & Analysis</h3>
+                    <p>Our advisors research and analyze potential schools based on your profile, considering multiple factors for the best fit.</p>
+                    <ul class="outline-list">
+                        <li>Athletic program strength and competition level</li>
+                        <li>Academic reputation and program offerings</li>
+                        <li>Campus culture and student life</li>
+                        <li>Graduation rates and career outcomes</li>
+                        <li>Financial aid and scholarship availability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">3</div>
+                <div class="step-content">
+                    <h3>Personalized Recommendations</h3>
+                    <p>We provide a curated list of schools that best match your profile, with detailed explanations of why each school is a good fit.</p>
+                    <ul class="outline-list">
+                        <li>Top matches with highest compatibility scores</li>
+                        <li>Reach schools that challenge your potential</li>
+                        <li>Safety schools that ensure options</li>
+                        <li>Detailed pros and cons for each recommendation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">4</div>
+                <div class="step-content">
+                    <h3>Recruitment Strategy</h3>
+                    <p>We help you develop a strategic approach to connecting with your target schools and maximizing your chances of acceptance.</p>
+                    <ul class="outline-list">
+                        <li>Timeline planning for recruitment process</li>
+                        <li>Communication strategies with coaches and admissions</li>
+                        <li>Highlight reel and athletic resume development</li>
+                        <li>Interview preparation and campus visit planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">5</div>
+                <div class="step-content">
+                    <h3>Ongoing Support</h3>
+                    <p>We provide continued guidance throughout your college application and decision-making process.</p>
+                    <ul class="outline-list">
+                        <li>Application review and feedback</li>
+                        <li>Scholarship negotiation assistance</li>
+                        <li>Decision-making support when offers arrive</li>
+                        <li>Transition planning for your chosen school</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🏫</span> School Fit Examples</h2>
+            <p>Here are examples of how we match student-athletes with schools that fit their unique profiles:</p>
+            
+            <div class="school-example">
+                <h3>Example: Football Player with Engineering Interest</h3>
+                <p>A high school football player with strong academic performance interested in engineering programs.</p>
+                <div class="school-metrics">
+                    <div class="metric"><strong>Athletic Fit:</strong> Division II programs with strong football tradition</div>
+                    <div class="metric"><strong>Academic Fit:</strong> Schools with ABET-accredited engineering programs</div>
+                    <div class="metric"><strong>Location:</strong> Midwest and Northeast regions</div>
+                    <div class="metric"><strong>Scholarship Potential:</strong> Athletic + Academic merit opportunities</div>
+                </div>
+                <p style="margin-top: 1rem;"><strong>Recommended Schools:</strong> University of North Dakota, University of New Hampshire, University of Maine</p>
+            </div>
+
+            <div class="school-example">
+                <h3>Example: Basketball Player with Business Focus</h3>
+                <p>A talented basketball player with interest in business and entrepreneurship, looking for urban campus environments.</p>
+                <div class="school-metrics">
+                    <div class="metric"><strong>Athletic Fit:</strong> Division I mid-major programs</div>
+                    <div class="metric"><strong>Academic Fit:</strong> Strong business schools with entrepreneurship tracks</div>
+                    <div class="metric"><strong>Location:</strong> Urban settings with business networking opportunities</div>
+                    <div class="metric"><strong>Campus Culture:</strong> Diverse student body with active social scene</div>
+                </div>
+                <p style="margin-top: 1rem;"><strong>Recommended Schools:</strong> Temple University, University of San Francisco, Loyola University Chicago</p>
+            </div>
+
+            <div class="school-example">
+                <h3>Example: Soccer Player with International Background</h3>
+                <p>An international student-athlete with strong soccer skills and interest in international relations.</p>
+                <div class="school-metrics">
+                    <div class="metric"><strong>Athletic Fit:</strong> Division I soccer programs with international roster spots</div>
+                    <div class="metric"><strong>Academic Fit:</strong> Strong international studies and language programs</div>
+                    <div class="metric"><strong>Support Services:</strong> International student support and ESL resources</div>
+                    <div class="metric"><strong>Cultural Fit:</strong> Diverse campus with global perspective</div>
+                </div>
+                <p style="margin-top: 1rem;"><strong>Recommended Schools:</strong> American University, University of San Diego, University of Portland</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👨‍🏫</span> Our Advisors</h2>
+            <p>Our School Fit Advising service is led by experienced professionals with backgrounds in college athletics, admissions, and student-athlete development.</p>
+            
+            <div class="advisor-profile">
+                <div class="advisor-avatar">MJ</div>
+                <div class="advisor-info">
+                    <h3>Michael Johnson</h3>
+                    <p>Former college basketball coach and athletic director with 20+ years of experience</p>
+                    <p>Expert in NCAA compliance and recruitment processes</p>
+                    <div class="advisor-specialties">
+                        <span class="specialty-tag">Basketball</span>
+                        <span class="specialty-tag">NCAA Compliance</span>
+                        <span class="specialty-tag">Recruitment</span>
+                        <span class="specialty-tag">Athletic Administration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advisor-profile">
+                <div class="advisor-avatar">KL</div>
+                <div class="advisor-info">
+                    <h3>Katherine Lee</h3>
+                    <p>Former college admissions counselor specializing in student-athlete applications</p>
+                    <p>15+ years of experience in higher education and academic advising</p>
+                    <div class="advisor-specialties">
+                        <span class="specialty-tag">College Admissions</span>
+                        <span class="specialty-tag">Academic Advising</span>
+                        <span class="specialty-tag">Financial Aid</span>
+                        <span class="specialty-tag">Student Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advisor-profile">
+                <div class="advisor-avatar">DT</div>
+                <div class="advisor-info">
+                    <h3>David Thompson</h3>
+                    <p>Former Division I football player and current high school athletic director</p>
+                    <p>Specializes in football and track & field recruitment</p>
+                    <div class="advisor-specialties">
+                        <span class="specialty-tag">Football</span>
+                        <span class="specialty-tag">Track & Field</span>
+                        <span class="specialty-tag">Strength & Conditioning</span>
+                        <span class="specialty-tag">Athletic Development</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">✅</span> Benefits of School Fit Advising</h2>
+            
+            <div class="takeaway-card">
+                <h3>Find Your Perfect Match</h3>
+                <p>Discover schools where you can thrive both athletically and academically, setting yourself up for long-term success.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Save Time and Reduce Stress</h3>
+                <p>Navigate the complex college selection process with expert guidance, focusing your efforts on the most promising opportunities.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Maximize Scholarship Opportunities</h3>
+                <p>Identify schools where your athletic and academic profile aligns with available scholarships and financial aid programs.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Make Informed Decisions</h3>
+                <p>Base your college choices on comprehensive data and expert insights rather than limited information or pressure from others.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Develop a Strategic Approach</h3>
+                <p>Create a targeted recruitment strategy that increases your chances of acceptance at your preferred institutions.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center;">
+            <h2>Apply Now</h2>
+            <p>Ready to find your perfect school fit? Apply now to work with our expert advisors and start your journey to the right college program.</p>
+            <a href="#" class="cta-button" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background-color: var(--primary-color); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Apply Now</a>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

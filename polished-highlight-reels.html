@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polished Highlight Reels - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .outline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .outline-item h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .outline-item p {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-list {
+            list-style: none;
+            padding: 0;
+            margin-left: 1.5rem;
+        }
+
+        .outline-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outline-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .takeaway-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .production-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-content h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .producer-profile {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .producer-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .producer-info {
+            flex-grow: 1;
+        }
+
+        .producer-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .producer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .producer-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .specialty-tag {
+            background-color: var(--card-background);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .reel-example {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .reel-example h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .reel-example p {
+            margin-bottom: 0.5rem;
+        }
+
+        .reel-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature {
+            background-color: var(--card-background);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .feature strong {
+            color: var(--primary-color);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-placeholder {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        .sport-specific {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .sport-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .sport-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .sport-card p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .sport-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <h1>Polished Highlight Reels</h1>
+            <p>Professional editing and production to showcase your best moments and catch the attention of scouts and recruiters.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🎥</span> About Polished Highlight Reels</h2>
+            <p>Our Polished Highlight Reels service transforms raw game footage into professional-quality videos that effectively showcase your athletic abilities, skills, and potential. We combine technical expertise with an understanding of what scouts and recruiters look for to create compelling highlight reels that stand out.</p>
+            
+            <div class="outline-item">
+                <h3>What We Offer</h3>
+                <ul class="outline-list">
+                    <li>Professional video editing and production</li>
+                    <li>Strategic clip selection to highlight your strengths</li>
+                    <li>Custom graphics and statistics integration</li>
+                    <li>Multiple format options for different platforms</li>
+                    <li>Expert feedback and revision process</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👥</span> Who Is This For?</h2>
+            
+            <div class="takeaway-card">
+                <h3>High School Athletes</h3>
+                <p>Looking to create impressive highlight reels for college recruitment and scholarship opportunities.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>College Athletes</h3>
+                <p>Seeking to showcase your skills for professional opportunities or transfer considerations.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Amateur Athletes</h3>
+                <p>Wanting to document your athletic journey with professional-quality videos.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Coaches & Teams</h3>
+                <p>Looking to create team highlight reels or individual player showcases.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📋</span> Our Production Process</h2>
+            
+            <div class="production-step">
+                <div class="step-icon">1</div>
+                <div class="step-content">
+                    <h3>Initial Consultation</h3>
+                    <p>We begin with a detailed discussion about your goals, target audience, and the footage you have available.</p>
+                    <ul class="outline-list">
+                        <li>Understanding your athletic background and achievements</li>
+                        <li>Identifying your target audience (college recruiters, professional scouts, etc.)</li>
+                        <li>Reviewing available footage and discussing additional filming needs</li>
+                        <li>Establishing timeline and delivery expectations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="production-step">
+                <div class="step-icon">2</div>
+                <div class="step-content">
+                    <h3>Footage Review & Selection</h3>
+                    <p>Our editors carefully review all available footage to identify the most impactful moments.</p>
+                    <ul class="outline-list">
+                        <li>Technical analysis of video quality and usability</li>
+                        <li>Strategic selection of clips that showcase your skills</li>
+                        <li>Organization of footage by game, skill type, or position</li>
+                        <li>Identification of any gaps that might need additional filming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="production-step">
+                <div class="step-icon">3</div>
+                <div class="step-content">
+                    <h3>Editing & Production</h3>
+                    <p>We create a compelling narrative that highlights your strengths and athletic abilities.</p>
+                    <ul class="outline-list">
+                        <li>Professional editing with attention to pacing and flow</li>
+                        <li>Color correction and visual enhancement</li>
+                        <li>Integration of graphics, statistics, and text overlays</li>
+                        <li>Selection of appropriate music and sound design</li>
+                        <li>Creation of multiple versions for different platforms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="production-step">
+                <div class="step-icon">4</div>
+                <div class="step-content">
+                    <h3>Review & Feedback</h3>
+                    <p>We share a draft version for your review and incorporate your feedback.</p>
+                    <ul class="outline-list">
+                        <li>Detailed review session with our production team</li>
+                        <li>Opportunity to request specific changes or adjustments</li>
+                        <li>Expert suggestions for improvements</li>
+                        <li>Multiple revision rounds if needed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="production-step">
+                <div class="step-icon">5</div>
+                <div class="step-content">
+                    <h3>Final Delivery</h3>
+                    <p>We deliver your polished highlight reel in multiple formats ready for sharing.</p>
+                    <ul class="outline-list">
+                        <li>High-quality video files optimized for different platforms</li>
+                        <li>Custom thumbnails and cover images</li>
+                        <li>Sharing recommendations for maximum visibility</li>
+                        <li>Optional distribution assistance to relevant contacts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🎬</span> Reel Examples</h2>
+            <p>Here are examples of the highlight reel services we offer:</p>
+            
+            <div class="reel-example">
+                <h3>Recruitment Highlight Reel</h3>
+                <p>A comprehensive showcase designed specifically for college recruiters and coaches.</p>
+                <div class="video-placeholder">Video Preview: Recruitment Highlight Reel</div>
+                <div class="reel-features">
+                    <div class="feature"><strong>Length:</strong> 3-5 minutes</div>
+                    <div class="feature"><strong>Focus:</strong> Technical skills and game IQ</div>
+                    <div class="feature"><strong>Elements:</strong> Player stats, position-specific highlights</div>
+                    <div class="feature"><strong>Style:</strong> Clean, professional, scout-friendly</div>
+                </div>
+            </div>
+
+            <div class="reel-example">
+                <h3>Skills Showcase</h3>
+                <p>A focused demonstration of specific athletic abilities and technical skills.</p>
+                <div class="video-placeholder">Video Preview: Skills Showcase</div>
+                <div class="reel-features">
+                    <div class="feature"><strong>Length:</strong> 1-2 minutes</div>
+                    <div class="feature"><strong>Focus:</strong> Specific skills and techniques</div>
+                    <div class="feature"><strong>Elements:</strong> Slow-motion analysis, skill breakdowns</div>
+                    <div class="feature"><strong>Style:</strong> Educational, detailed, technique-focused</div>
+                </div>
+            </div>
+
+            <div class="reel-example">
+                <h3>Season Highlights</h3>
+                <p>A comprehensive review of your best moments throughout an entire season.</p>
+                <div class="video-placeholder">Video Preview: Season Highlights</div>
+                <div class="reel-features">
+                    <div class="feature"><strong>Length:</strong> 5-8 minutes</div>
+                    <div class="feature"><strong>Focus:</strong> Overall performance and consistency</div>
+                    <div class="feature"><strong>Elements:</strong> Game-by-game highlights, season stats</div>
+                    <div class="feature"><strong>Style:</strong> Narrative-driven, story-focused</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🏀</span> Sport-Specific Expertise</h2>
+            <p>We specialize in creating highlight reels for a wide range of sports, with editors who understand the unique aspects of each:</p>
+            
+            <div class="sport-specific">
+                <div class="sport-card">
+                    <div class="sport-icon">🏈</div>
+                    <h3>Football</h3>
+                    <p>Position-specific highlights, game film analysis, and skill demonstrations.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">🏀</div>
+                    <h3>Basketball</h3>
+                    <p>Offensive moves, defensive plays, court vision, and athleticism showcases.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">⚽</div>
+                    <h3>Soccer</h3>
+                    <p>Technical skills, tactical awareness, and game-changing moments.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">⚾</div>
+                    <h3>Baseball</h3>
+                    <p>Batting, pitching, fielding, and situational play highlights.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">🏃</div>
+                    <h3>Track & Field</h3>
+                    <p>Race footage, technique analysis, and performance comparisons.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">🏒</div>
+                    <h3>Hockey</h3>
+                    <p>Skating, shooting, passing, and defensive play highlights.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">🏸</div>
+                    <h3>Tennis</h3>
+                    <p>Serve, volley, groundstrokes, and match point highlights.</p>
+                </div>
+                
+                <div class="sport-card">
+                    <div class="sport-icon">🏊</div>
+                    <h3>Swimming</h3>
+                    <p>Stroke technique, race footage, and performance analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">✅</span> Benefits of Polished Highlight Reels</h2>
+            
+            <div class="two-column">
+                <div class="takeaway-card">
+                    <h3>Stand Out to Recruiters</h3>
+                    <p>Create a professional first impression that catches the attention of college recruiters and professional scouts.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Showcase Your Best Moments</h3>
+                    <p>Effectively highlight your strengths and athletic abilities in a compelling narrative.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Save Time for Coaches</h3>
+                    <p>Make it easy for busy coaches and recruiters to quickly evaluate your potential.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Professional Quality</h3>
+                    <p>Benefit from industry-standard production techniques and equipment.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Versatile Content</h3>
+                    <p>Receive your highlights in multiple formats suitable for different platforms and purposes.</p>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3>Personal Branding</h3>
+                    <p>Strengthen your personal brand with consistent, high-quality visual content.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center;">
+            <h2>Apply Now</h2>
+            <p>Ready to showcase your talent with a professional highlight reel? Apply now to work with our expert production team and create content that stands out to recruiters and scouts.</p>
+            <a href="#" class="cta-button" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background-color: var(--primary-color); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">Apply Now</a>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

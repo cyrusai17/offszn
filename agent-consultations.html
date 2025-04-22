@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Consultations - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .service-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .outline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .outline-item h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .outline-item p {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-list {
+            list-style: none;
+            padding: 0;
+            margin-left: 1.5rem;
+        }
+
+        .outline-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .outline-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .takeaway-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .consultation-type {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .type-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .type-content {
+            flex-grow: 1;
+        }
+
+        .type-content h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .agent-profile {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .agent-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .agent-info {
+            flex-grow: 1;
+        }
+
+        .agent-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .specialty-tag {
+            background-color: var(--card-background);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <h1>Agent Consultations</h1>
+            <p>Connect with experienced sports agents for personalized advice on contracts, negotiations, and career planning.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🤝</span> About Our Agent Consultations</h2>
+            <p>Our Agent Consultations service connects student-athletes with experienced sports agents who provide personalized guidance on navigating the complex world of professional sports, NIL opportunities, and career planning.</p>
+            
+            <div class="outline-item">
+                <h3>What We Offer</h3>
+                <ul class="outline-list">
+                    <li>One-on-one consultations with licensed sports agents</li>
+                    <li>Expert advice on contract negotiations and terms</li>
+                    <li>Guidance on NIL opportunities and compliance</li>
+                    <li>Career planning and transition support</li>
+                    <li>Industry insights and networking opportunities</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👥</span> Who Is This For?</h2>
+            
+            <div class="takeaway-card">
+                <h3>Student-Athletes</h3>
+                <p>Looking for guidance on navigating NIL opportunities, understanding contract terms, and planning for a professional career in sports.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Professional Prospects</h3>
+                <p>Athletes preparing for professional drafts or international opportunities who need expert advice on representation and negotiations.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Career Transitioners</h3>
+                <p>Athletes planning for life after sports who need guidance on leveraging their athletic experience for career opportunities.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Parents & Guardians</h3>
+                <p>Supporting young athletes through important decisions about their athletic and professional future.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📋</span> Consultation Types</h2>
+            
+            <div class="consultation-type">
+                <div class="type-icon">1</div>
+                <div class="type-content">
+                    <h3>NIL Strategy Session</h3>
+                    <p>A focused consultation on maximizing your Name, Image, and Likeness opportunities while maintaining NCAA compliance.</p>
+                    <ul class="outline-list">
+                        <li>Evaluating potential brand partnerships</li>
+                        <li>Understanding contract terms and conditions</li>
+                        <li>Developing a NIL strategy aligned with your goals</li>
+                        <li>Compliance guidance and best practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="consultation-type">
+                <div class="type-icon">2</div>
+                <div class="type-content">
+                    <h3>Contract Review</h3>
+                    <p>Expert analysis of contracts for NIL deals, sponsorships, or professional opportunities to ensure your interests are protected.</p>
+                    <ul class="outline-list">
+                        <li>Detailed review of terms and conditions</li>
+                        <li>Identification of potential red flags or unfavorable clauses</li>
+                        <li>Recommendations for negotiation points</li>
+                        <li>Explanation of legal terminology and implications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="consultation-type">
+                <div class="type-icon">3</div>
+                <div class="type-content">
+                    <h3>Career Planning Session</h3>
+                    <p>Strategic guidance on leveraging your athletic experience for career opportunities both within and beyond sports.</p>
+                    <ul class="outline-list">
+                        <li>Assessment of skills and transferable qualities</li>
+                        <li>Industry-specific career pathways</li>
+                        <li>Networking strategies and relationship building</li>
+                        <li>Transition planning and timeline development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="consultation-type">
+                <div class="type-icon">4</div>
+                <div class="type-content">
+                    <h3>Professional Representation Consultation</h3>
+                    <p>Advice on selecting and working with agents, managers, or other representatives for your professional career.</p>
+                    <ul class="outline-list">
+                        <li>Understanding different types of representation</li>
+                        <li>Evaluating potential agents or agencies</li>
+                        <li>Understanding fee structures and expectations</li>
+                        <li>Negotiating representation agreements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👨‍💼</span> Our Agent Network</h2>
+            <p>Our consultations are conducted by experienced, licensed sports agents with expertise across various sports and specialties.</p>
+            
+            <div class="agent-profile">
+                <div class="agent-avatar">JD</div>
+                <div class="agent-info">
+                    <h3>John Davis</h3>
+                    <p>15+ years of experience representing professional athletes in football and basketball</p>
+                    <p>Former NFL player with expertise in contract negotiations and endorsement deals</p>
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Football</span>
+                        <span class="specialty-tag">Basketball</span>
+                        <span class="specialty-tag">Contract Negotiation</span>
+                        <span class="specialty-tag">NIL</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agent-profile">
+                <div class="agent-avatar">SM</div>
+                <div class="agent-info">
+                    <h3>Sarah Martinez</h3>
+                    <p>10+ years of experience in sports law and athlete representation</p>
+                    <p>Specializes in Olympic sports and international opportunities</p>
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Olympic Sports</span>
+                        <span class="specialty-tag">International</span>
+                        <span class="specialty-tag">Sports Law</span>
+                        <span class="specialty-tag">Career Transition</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agent-profile">
+                <div class="agent-avatar">RJ</div>
+                <div class="agent-info">
+                    <h3>Robert Johnson</h3>
+                    <p>12+ years of experience in baseball and soccer representation</p>
+                    <p>Expert in international opportunities and youth development</p>
+                    <div class="agent-specialties">
+                        <span class="specialty-tag">Baseball</span>
+                        <span class="specialty-tag">Soccer</span>
+                        <span class="specialty-tag">International</span>
+                        <span class="specialty-tag">Youth Development</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">✅</span> Benefits of Agent Consultations</h2>
+            
+            <div class="takeaway-card">
+                <h3>Expert Guidance</h3>
+                <p>Access professional insights from experienced agents who understand the complexities of the sports industry.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Informed Decision-Making</h3>
+                <p>Make confident decisions about your athletic and professional future with comprehensive information and expert advice.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Risk Mitigation</h3>
+                <p>Avoid common pitfalls and protect your interests through proper contract review and negotiation guidance.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Career Advancement</h3>
+                <p>Develop a strategic approach to leveraging your athletic experience for long-term career success.</p>
+            </div>
+
+            <div class="takeaway-card">
+                <h3>Industry Connections</h3>
+                <p>Gain access to valuable networking opportunities and industry insights that can accelerate your career development.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center;">
+            <h2>Coming Soon</h2>
+            <p>Our Agent Consultations service will be available in the coming months. Join our waitlist to be notified when bookings open and receive exclusive early access.</p>
+            <a href="index.html#waitlist" class="cta-button" style="margin-top: 1.5rem;">Join Waitlist</a>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

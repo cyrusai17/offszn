@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - OFFSZN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            background-color: var(--card-background);
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .founder-profile {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .founder-avatar {
+            width: 100px;
+            height: 100px;
+            background-color: var(--card-background);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .founder-info {
+            flex-grow: 1;
+        }
+
+        .founder-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .advisory-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .advisor-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .advisor-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-title {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-bio {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--background);
+            border-radius: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            margin-bottom: 0;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">OFFSZN</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h1>About OFFSZN</h1>
+            <p>Empowering student-athletes to maximize their potential both on and off the field.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">🎯</span> Our Vision</h2>
+            <p>At OFFSZN, we envision a world where student-athletes have access to the resources, guidance, and opportunities they need to excel in their athletic careers and beyond. We believe that the skills, discipline, and determination developed through sports can translate into success in all areas of life.</p>
+            
+            <p>Our mission is to bridge the gap between athletic talent and professional success by providing comprehensive support services tailored specifically for student-athletes. We aim to be the trusted partner that helps athletes navigate the complex landscape of collegiate sports, transfer opportunities, personal branding, and career development.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📖</span> Our Story</h2>
+            <p>OFFSZN was born in the spring of 2024 at Tulane University, when a group of undergraduate student-athletes recognized a significant gap in the support available to their peers. These founders, who had experienced firsthand the challenges of balancing athletics, academics, and personal development, came together with a shared vision: to create a platform that would empower student-athletes to make informed decisions about their future.</p>
+            
+            <p>What began as a small project to help teammates navigate transfer deadlines quickly evolved into a comprehensive support system. The founders spent countless hours researching NCAA regulations, consulting with athletic advisors, and interviewing fellow athletes to understand their needs. They discovered that many student-athletes lacked access to reliable information about transfer opportunities, NIL regulations, and career planning resources.</p>
+            
+            <p>With the support of Tulane's entrepreneurship program and mentorship from experienced professionals in the sports industry, OFFSZN was officially launched. The platform has since grown to serve student-athletes across the country, providing them with the tools and guidance they need to succeed both on and off the field.</p>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👥</span> Our Founders</h2>
+            
+            <div class="founder-profile">
+                <div class="founder-avatar">EJ</div>
+                <div class="founder-info">
+                    <h3>Eric Johnson</h3>
+                    <p>Co-Founder & CEO</p>
+                    <p>Former Division I football player at Tulane University, Eric recognized the need for better resources for student-athletes after navigating his own transfer process. With a background in business and technology, Eric leads OFFSZN's strategic vision and growth initiatives.</p>
+                </div>
+            </div>
+
+            <div class="founder-profile">
+                <div class="founder-avatar">SR</div>
+                <div class="founder-info">
+                    <h3>Sarah Rodriguez</h3>
+                    <p>Co-Founder & COO</p>
+                    <p>A former collegiate soccer player and marketing major, Sarah brings her passion for athlete development and operational expertise to OFFSZN. She oversees the day-to-day operations and ensures that all services meet the highest standards of quality.</p>
+                </div>
+            </div>
+
+            <div class="founder-profile">
+                <div class="founder-avatar">MK</div>
+                <div class="founder-info">
+                    <h3>Michael Kim</h3>
+                    <p>Co-Founder & CTO</p>
+                    <p>With a background in computer science and experience as a student manager for the Tulane basketball team, Michael combines technical expertise with a deep understanding of collegiate athletics. He leads OFFSZN's technology development and digital platform initiatives.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">📅</span> Our Journey</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2024</div>
+                        <h3>The Idea</h3>
+                        <p>The founders identify the need for better resources for student-athletes during a late-night study session at Tulane University.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2024</div>
+                        <h3>Research & Development</h3>
+                        <p>The team begins extensive research on NCAA regulations, transfer processes, and student-athlete needs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024</div>
+                        <h3>MVP Launch</h3>
+                        <p>OFFSZN launches its first service: Transfer Deadline Guides, helping student-athletes navigate the complex transfer process.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2024</div>
+                        <h3>Expansion</h3>
+                        <p>The platform expands to include NIL Training Course and Branding Professionals services.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 2024</div>
+                        <h3>Advisory Board Formation</h3>
+                        <p>OFFSZN forms its advisory board with industry experts to guide strategic growth and service development.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 2025</div>
+                        <h3>Full Platform Launch</h3>
+                        <p>OFFSZN launches its complete suite of services, including Agent Consultations, School Fit Advising, and Polished Highlight Reels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">💡</span> Our Mission & Values</h2>
+            
+            <div class="mission-values">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in everything we do, providing the highest quality resources and support to our users.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>We operate with transparency and honesty, always putting the best interests of student-athletes first.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Growth</h3>
+                    <p>We believe in continuous improvement and are committed to evolving our services based on user feedback and changing needs.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤲</div>
+                    <h3>Empowerment</h3>
+                    <p>We empower student-athletes to take control of their future by providing them with the knowledge and tools they need to succeed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2><span class="emoji">👨‍🏫</span> Our Advisory Board</h2>
+            <p>OFFSZN is guided by a distinguished advisory board of industry experts, former athletes, and professionals who bring diverse perspectives and extensive experience to our mission.</p>
+            
+            <div class="advisory-board">
+                <div class="advisor-card">
+                    <h3>Dr. James Wilson</h3>
+                    <div class="advisor-title">Former NCAA Compliance Officer</div>
+                    <p class="advisor-bio">With over 15 years of experience in NCAA compliance, Dr. Wilson provides invaluable guidance on regulatory matters and ensures OFFSZN's services align with current NCAA policies.</p>
+                </div>
+                
+                <div class="advisor-card">
+                    <h3>Lisa Thompson</h3>
+                    <div class="advisor-title">Sports Agent & Attorney</div>
+                    <p class="advisor-bio">A former collegiate athlete and current sports agent, Lisa brings expertise in contract negotiation, NIL opportunities, and legal considerations for student-athletes.</p>
+                </div>
+                
+                <div class="advisor-card">
+                    <h3>Robert Chen</h3>
+                    <div class="advisor-title">Athletic Director</div>
+                    <p class="advisor-bio">With experience at multiple Division I institutions, Robert provides insights into athletic department operations and the recruitment process from an administrator's perspective.</p>
+                </div>
+                
+                <div class="advisor-card">
+                    <h3>Maria Garcia</h3>
+                    <div class="advisor-title">Sports Marketing Executive</div>
+                    <p class="advisor-bio">A pioneer in athlete branding and marketing, Maria advises on personal brand development and commercial opportunities for student-athletes.</p>
+                </div>
+                
+                <div class="advisor-card">
+                    <h3>David Miller</h3>
+                    <div class="advisor-title">Former Professional Athlete</div>
+                    <p class="advisor-bio">After a successful career in professional sports, David now mentors young athletes on career transitions and life after sports.</p>
+                </div>
+                
+                <div class="advisor-card">
+                    <h3>Dr. Sarah Johnson</h3>
+                    <div class="advisor-title">Sports Psychologist</div>
+                    <p class="advisor-bio">Specializing in athlete mental health and performance, Dr. Johnson provides guidance on maintaining well-being while pursuing athletic excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OFFSZN. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
