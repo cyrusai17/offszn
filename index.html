@@ -12,10 +12,14 @@
 <body>
     <header>
         <nav>
-            <div class="logo">OFFSZN</div>
+            <a href="index.html" class="logo">OFFSZN</a>
             <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
                 <a href="about-us.html">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#waitlist">Join Waitlist</a>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         </nav>
     </header>
 
@@ -24,7 +28,7 @@
             <h1>Empowering athletes to excel during the offseason and beyond.</h1>
         </section>
 
-        <section class="services">
+        <section id="services" class="services">
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -70,7 +74,7 @@
             </div>
         </section>
 
-        <section class="waitlist">
+        <section id="waitlist" class="waitlist">
             <h2>Ready to Elevate Your Game?</h2>
             <p class="waitlist-subtitle">Join OFFSZN today and take control of your athletic future with our comprehensive suite of services.</p>
             
@@ -96,5 +100,24 @@
     <footer>
         <p>&copy; 2025 OFFSZN. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-links') && !event.target.closest('.mobile-menu-btn')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

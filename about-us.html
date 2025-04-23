@@ -220,6 +220,13 @@
             text-decoration: underline;
         }
 
+        /* Navigation styles */
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
         @media (max-width: 768px) {
             .timeline::after {
                 left: 31px;
@@ -238,13 +245,37 @@
             .right {
                 left: 0;
             }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--background);
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">OFFSZN</div>
+            <a href="index.html" class="logo">OFFSZN</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html" class="active">About Us</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#waitlist">Join Waitlist</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         </nav>
     </header>
 
@@ -263,42 +294,11 @@
 
         <section class="content-section">
             <h2><span class="emoji">📖</span> Our Story</h2>
-            <p>OFFSZN was born in the spring of 2024 at Tulane University, when a group of undergraduate student-athletes recognized a significant gap in the support available to their peers. These founders, who had experienced firsthand the challenges of balancing athletics, academics, and personal development, came together with a shared vision: to create a platform that would empower student-athletes to make informed decisions about their future.</p>
+            <p>OFFSZN was born in the spring of 2025 at Tulane University, when a group of undergraduate student-athletes recognized a significant gap in the support available to their peers. These founders, who had experienced firsthand the challenges of balancing athletics, academics, and personal development, came together with a shared vision: to create a platform that would empower student-athletes to make informed decisions about their future.</p>
             
             <p>What began as a small project to help teammates navigate transfer deadlines quickly evolved into a comprehensive support system. The founders spent countless hours researching NCAA regulations, consulting with athletic advisors, and interviewing fellow athletes to understand their needs. They discovered that many student-athletes lacked access to reliable information about transfer opportunities, NIL regulations, and career planning resources.</p>
             
             <p>With the support of Tulane's entrepreneurship program and mentorship from experienced professionals in the sports industry, OFFSZN was officially launched. The platform has since grown to serve student-athletes across the country, providing them with the tools and guidance they need to succeed both on and off the field.</p>
-        </section>
-
-        <section class="content-section">
-            <h2><span class="emoji">👥</span> Our Founders</h2>
-            
-            <div class="founder-profile">
-                <div class="founder-avatar">EJ</div>
-                <div class="founder-info">
-                    <h3>Eric Johnson</h3>
-                    <p>Co-Founder & CEO</p>
-                    <p>Former Division I football player at Tulane University, Eric recognized the need for better resources for student-athletes after navigating his own transfer process. With a background in business and technology, Eric leads OFFSZN's strategic vision and growth initiatives.</p>
-                </div>
-            </div>
-
-            <div class="founder-profile">
-                <div class="founder-avatar">SR</div>
-                <div class="founder-info">
-                    <h3>Sarah Rodriguez</h3>
-                    <p>Co-Founder & COO</p>
-                    <p>A former collegiate soccer player and marketing major, Sarah brings her passion for athlete development and operational expertise to OFFSZN. She oversees the day-to-day operations and ensures that all services meet the highest standards of quality.</p>
-                </div>
-            </div>
-
-            <div class="founder-profile">
-                <div class="founder-avatar">MK</div>
-                <div class="founder-info">
-                    <h3>Michael Kim</h3>
-                    <p>Co-Founder & CTO</p>
-                    <p>With a background in computer science and experience as a student manager for the Tulane basketball team, Michael combines technical expertise with a deep understanding of collegiate athletics. He leads OFFSZN's technology development and digital platform initiatives.</p>
-                </div>
-            </div>
         </section>
 
         <section class="content-section">
@@ -307,7 +307,7 @@
             <div class="timeline">
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <div class="timeline-date">January 2024</div>
+                        <div class="timeline-date">January 2025</div>
                         <h3>The Idea</h3>
                         <p>The founders identify the need for better resources for student-athletes during a late-night study session at Tulane University.</p>
                     </div>
@@ -315,7 +315,7 @@
                 
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <div class="timeline-date">March 2024</div>
+                        <div class="timeline-date">March 2025</div>
                         <h3>Research & Development</h3>
                         <p>The team begins extensive research on NCAA regulations, transfer processes, and student-athlete needs.</p>
                     </div>
@@ -323,7 +323,7 @@
                 
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <div class="timeline-date">May 2024</div>
+                        <div class="timeline-date">May 2025</div>
                         <h3>MVP Launch</h3>
                         <p>OFFSZN launches its first service: Transfer Deadline Guides, helping student-athletes navigate the complex transfer process.</p>
                     </div>
@@ -331,7 +331,7 @@
                 
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <div class="timeline-date">August 2024</div>
+                        <div class="timeline-date">August 2025</div>
                         <h3>Expansion</h3>
                         <p>The platform expands to include NIL Training Course and Branding Professionals services.</p>
                     </div>
@@ -339,7 +339,7 @@
                 
                 <div class="timeline-item left">
                     <div class="timeline-content">
-                        <div class="timeline-date">December 2024</div>
+                        <div class="timeline-date">December 2025</div>
                         <h3>Advisory Board Formation</h3>
                         <p>OFFSZN forms its advisory board with industry experts to guide strategic growth and service development.</p>
                     </div>
@@ -347,7 +347,7 @@
                 
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <div class="timeline-date">April 2025</div>
+                        <div class="timeline-date">April 2026</div>
                         <h3>Full Platform Launch</h3>
                         <p>OFFSZN launches its complete suite of services, including Agent Consultations, School Fit Advising, and Polished Highlight Reels.</p>
                     </div>
@@ -436,5 +436,24 @@
     <footer>
         <p>&copy; 2025 OFFSZN. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-links') && !event.target.closest('.mobile-menu-btn')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
